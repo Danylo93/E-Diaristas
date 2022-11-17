@@ -1,11 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Render } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Render, Redirect } from '@nestjs/common';
 import { ServicesService } from './services.service';
 import { CreateServiceDto } from './dto/create-service.dto';
 import { UpdateServiceDto } from './dto/update-service.dto';
+import { Repository } from 'typeorm';
+import { Service } from './entities/service.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Controller('admin/services')
 export class ServicesController {
-  constructor(private readonly servicesService: ServicesService) {}
+  constructor(
+      private readonly servicesService: ServicesService,
+      @InjectRepository(Service)
+     private readonly servicosRepository: Repository<Service>) {}
 
   @Get()
   @Render('services/cadastrar')
@@ -14,8 +20,9 @@ export class ServicesController {
   }
 
   @Post()
-  create(@Body() createServiceDto: CreateServiceDto) {
-    return this.servicesService.create(createServiceDto);
+  @Redirect('services/cadastrar')
+ async cadastrar(@Body() createServiceDto: CreateServiceDto) {
+    await this.servicosRepository.save(createServiceDto);
   }
 
   
