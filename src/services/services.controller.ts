@@ -27,11 +27,11 @@ export class ServicesController {
   ) {}
 
   @Get('create')
-  @Render('/services/cadastrar')
+  @Render('services/cadastrar')
   exibirCadastrar() {}
 
   @Get('index')
-  @Render('/services/index')
+  @Render('services/index')
   async listarServicos() {
     const servicos = await this.servicosRepository.find();
     return { servicos: servicos };
