@@ -13,27 +13,37 @@ export class ServicesController {
       @InjectRepository(Service)
      private readonly servicosRepository: Repository<Service>) {}
 
-  @Get()
+  @Get('create')
   @Render('services/cadastrar')
   exibirCadastrar() {
     
   }
 
+  @Get('index')
+  @Render('services/index')
+ async listarServicos() {
+    const servicos = await this.servicosRepository.find();
+    return {servicos: servicos};
+  }
+
   @Post()
-  @Redirect('services/cadastrar')
+  @Redirect('/admin/services/index')
  async cadastrar(@Body() createServiceDto: CreateServiceDto) {
-    await this.servicosRepository.save(createServiceDto);
+   return await this.servicosRepository.save(createServiceDto);
   }
 
-  
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.servicesService.findOne(+id);
+  @Get(':id/edit')
+  @Render('services/editar')
+ async atualizarServico(@Param('id') id: number) {
+    const servico = await this.servicosRepository.findOneBy({id: id});
+    return {servico: servico};
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateServiceDto: UpdateServiceDto) {
-    return this.servicesService.update(+id, updateServiceDto);
+  @Patch(':id/edit')
+  @Redirect('/admin/services/index')
+ async update(@Param('id') id: string, @Body() updateServiceDto: UpdateServiceDto) {
+  return await this.servicosRepository.update(id, updateServiceDto);
+   
   }
 
   @Delete(':id')
