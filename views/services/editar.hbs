@@ -13,17 +13,23 @@
           <fieldset>
             <legend>Identificação</legend>
             <div class="row">
+              <div class="col-lg-12">
+                <div class="col-lg-6">
+                  <div class="{{alert}}">
+                  <p>{{{message}}}</p>
+                </div>
+                </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="nome">Nome</label>
-                  <input type="text" value="{{servico.nome}}" class="form-control" name="nome" placeholder="node do serviço">
+                  <input type="text" value="{{#if message}}{{oldData.0.nome}}{{^}}{{servico.nome}}{{/if}}" class="form-control" name="nome" placeholder="nome do serviço" required>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="icone">Icone</label>
                   <select name="icone" id="icone" class="form-control">
-                    <option value="{{servico.icone}}">{{servico.icone}}</option>
+                    <option value="{{#if message}}{{oldData.0.icone}}{{^}}{{servico.icone}}{{/if}}">{{#if message}}{{oldData.0.icone}}{{^}}{{servico.icone}}{{/if}}</option>
                     <option value="twf-cleaning-1">Icone 1</option>
                     <option value="twf-cleaning-2">Icone 2</option>
                     <option value="twf-cleaning-3">Icone 3</option>
@@ -33,7 +39,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="posicao">Posição na plataforma</label>
-                  <input type="text" value="{{servico.posicao}}" class="form-control" name="posicao" placeholder="Posição do  serviço na plataforma">
+                  <input type="text" value="{{#if message}}{{oldData.0.posicao}}{{^}}{{servico.posicao}}{{/if}}" class="form-control" name="posicao" placeholder="Posição do  serviço na plataforma" data-mask="00" required>
                 </div>
               </div>
             </div>
@@ -44,19 +50,21 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="valorMinimo">Valor Minimo</label>
-                  <input type="text" value="{{servico.valorMinimo}}" class="form-control" name="valorMinimo" placeholder="valor minimo do serviço">
+                  <input type="text" value="{{#if message}}{{oldData.0.valorMinimo}}{{^}}{{servico.valorMinimo}}{{/if}}" class="form-control" name="valorMinimo" placeholder="valor minimo do serviço"
+                  required data-mask="#.##0,00" data-mask-reverse="true"
+                  >
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="quantidadeHoras">Quantidade Minima de horas</label>
-                  <input type="number" value="{{servico.quantidadeHoras}}" class="form-control" name="quantidadeHoras" placeholder="quantidade minima de horas">
+                  <input type="number" value="{{#if message}}{{oldData.0.quantidadeHoras}}{{^}}{{servico.quantidadeHoras}}{{/if}}" class="form-control" name="quantidadeHoras" placeholder="quantidade minima de horas">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="porcentagem">Porcentagem da comissão</label>
-                  <input type="text" value="{{servico.porcentagem}}" class="form-control" name="porcentagem" placeholder="Porcentagem da comissão">
+                  <input type="text" value="{{#if message}}{{oldData.0.porcentagem}}{{^}}{{servico.porcentagem}}{{/if}}" class="form-control" name="porcentagem" placeholder="Porcentagem da comissão" data-mask="000" required>
                 </div>
               </div>
             </div>
@@ -67,74 +75,86 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="valorquarto">Valor por quarto</label>
-                  <input type="text" value="{{servico.valorquarto}}" class="form-control" name="valorquarto" placeholder="Valor por quarto">
+                  <input type="text" value="{{#if message}}{{oldData.0.valorquarto}}{{^}}{{servico.valorquarto}}{{/if}}" class="form-control" name="valorquarto" placeholder="Valor por quarto"
+                  required data-mask="#.##0,00" data-mask-reverse="true"
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="horasQuarto">Quantidade de horas por quarto</label>
-                  <input type="number" value="{{servico.horasQuarto}}" class="form-control" name="horasQuarto" placeholder="Quantidade de horas por quarto">
+                  <input type="number" value="{{#if message}}{{oldData.0.horasQuarto}}{{^}}{{servico.horasQuarto}}{{/if}}" class="form-control" name="horasQuarto" placeholder="Quantidade de horas por quarto" data-mask="0" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="valorSala">Valor por Sala</label>
-                  <input type="text" value="{{servico.valorSala}}" class="form-control" name="valorSala" placeholder="Valor por Sala">
+                  <input type="text" value="{{#if message}}{{oldData.0.valorSala}}{{^}}{{servico.valorSala}}{{/if}}" class="form-control" name="valorSala" placeholder="Valor por Sala"
+                  required data-mask="#.##0,00" data-mask-reverse="true"
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="horasSala">Quantidade de horas por Sala</label>
-                  <input type="number" value="{{servico.horasSala}}" class="form-control" name="horasSala" placeholder="Quantidade de horas por Sala">
+                  <input type="number" value="{{#if message}}{{oldData.0.horasSala}}{{^}}{{servico.horasSala}}{{/if}}" class="form-control" name="horasSala" placeholder="Quantidade de horas por Sala" data-mask="0" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="valorBanheiro">Valor por Banheiro</label>
-                  <input type="text" value="{{servico.valorBanheiro}}" class="form-control" name="valorBanheiro" placeholder="Valor por Banheiro">
+                  <input type="text" value="{{#if message}}{{oldData.0.valorBanheiro}}{{^}}{{servico.valorBanheiro}}{{/if}}" class="form-control" name="valorBanheiro" placeholder="Valor por Banheiro"
+                  required data-mask="#.##0,00" data-mask-reverse="true"
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="horasBanheiro">Quantidade de horas por Banheiro</label>
-                  <input type="number" value="{{servico.horasBanheiro}}" class="form-control" name="horasBanheiro" placeholder="Quantidade de horas por Banheiro">
+                  <input type="number" value="{{#if message}}{{oldData.0.horasBanheiro}}{{^}}{{servico.horasBanheiro}}{{/if}}" class="form-control" name="horasBanheiro" placeholder="Quantidade de horas por Banheiro" data-mask="0" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="valorCozinha">Valor por Cozinha</label>
-                  <input type="text" value="{{servico.valorCozinha}}" class="form-control" name="valorCozinha" placeholder="Valor por Cozinha">
+                  <input type="text" value="{{#if message}}{{oldData.0.valorCozinha}}{{^}}{{servico.valorCozinha}}{{/if}}" class="form-control" name="valorCozinha" placeholder="Valor por Cozinha"
+                  required data-mask="#.##0,00" data-mask-reverse="true"
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="horasCozinha">Quantidade de horas por Cozinha</label>
-                  <input type="number" value="{{servico.horasCozinha}}" class="form-control" name="horasCozinha" placeholder="Quantidade de horas por Cozinha">
+                  <input type="number" value="{{#if message}}{{oldData.0.horasCozinha}}{{^}}{{servico.horasCozinha}}{{/if}}" class="form-control" name="horasCozinha" placeholder="Quantidade de horas por Cozinha" data-mask="0" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="valorQuintal">Valor por Quintal</label>
-                  <input type="text" value="{{servico.valorQuintal}}" class="form-control" name="valorQuintal" placeholder="Valor por Quintal">
+                  <input type="text" value="{{#if message}}{{oldData.0.valorQuintal}}{{^}}{{servico.valorQuintal}}{{/if}}" class="form-control" name="valorQuintal" placeholder="Valor por Quintal"
+                  required data-mask="#.##0,00" data-mask-reverse="true"
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="horasQuintal">Quantidade de horas por Quintal</label>
-                  <input type="number" value="{{servico.horasQuintal}}" class="form-control" name="horasQuintal" placeholder="Quantidade de horas por Quintal">
+                  <input type="number" value="{{#if message}}{{oldData.0.horasQuintal}}{{^}}{{servico.horasQuintal}}{{/if}}" class="form-control" name="horasQuintal" placeholder="Quantidade de horas por Quintal" data-mask="0" required>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="valorOutros">Valor Outros tipos de cômodos</label>
-                  <input type="text" value="{{servico.valorOutros}}" class="form-control" name="valorOutros" placeholder="Valor Outros tipos de cômodos">
+                  <input type="text" value="{{#if message}}{{oldData.0.valorOutros}}{{^}}{{servico.valorOutros}}{{/if}}" class="form-control" name="valorOutros" placeholder="Valor Outros tipos de cômodos"
+                  required data-mask="#.##0,00" data-mask-reverse="true"
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="horasOutros">Quantidade de horas por Outros cômodos</label>
-                  <input type="number" value="{{servico.horasOutros}}" class="form-control" name="horasOutros" placeholder="Quantidade de horas por Outros cômodos">
+                  <input type="number" value="{{#if message}}{{oldData.0.horasOutros}}{{^}}{{servico.horasOutros}}{{/if}}" class="form-control" name="horasOutros" placeholder="Quantidade de horas por Outros cômodos" data-mask="0" required>
                 </div>
               </div>
               

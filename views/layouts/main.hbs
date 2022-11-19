@@ -45,7 +45,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="#"  class="brand-link">
+      <img src="/img/logo.jpg" alt="e-diaristas" class="brand-image img-circle elevation-3" style="opacity: .8;" />
       <span class="brand-text font-weight-light">Administração</span>
     </a>
 
@@ -63,13 +64,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link active">
               <i class="fas fa-fw fa-broom"></i>
               <p>
-                Serviços
+               Cadastro de Serviços
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin/services/index" class="nav-link">
+                  <i class="fas fa-fw fa-list"></i>
+                  <p>Lista de Serviços</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/services/create" class="nav-link">
                   <i class="fas fa-fw fa-file"></i>
                   <p>Novo Serviço</p>
                 </a>
@@ -105,15 +114,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <strong>Copyright &copy; 2022 <a href="#">E-diaristas</a>.</strong> All rights reserved.
   </footer>
 </div>
-<!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
 <script src="/js/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
 <script src="/js/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
 <script src="/js/adminlte/adminlte.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" ></script>
 </body>
 </html>
