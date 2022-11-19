@@ -1,6 +1,6 @@
 export class Utils{
   formatDecimal(decimal: number){
-    return parseInt(String(decimal).replace(/^\d+(\.\d{1,2})?$/, ''));
+    return parseInt(String(decimal).replace(/[\.\,]/g, ''));
   }
   formatException(exception: JSON): string{
     const error = JSON.stringify(exception);
