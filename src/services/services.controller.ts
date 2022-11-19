@@ -1,10 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Render, Redirect } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Render, Redirect, Request, UseFilters } from '@nestjs/common';
 import { ServicesService } from './services.service';
 import { CreateServiceDto } from './dto/create-service.dto';
 import { UpdateServiceDto } from './dto/update-service.dto';
 import { Repository } from 'typeorm';
 import { Service } from './entities/service.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { CreateException } from 'src/common/filters/create-exceptions.filter';
 
 @Controller('admin/services')
 export class ServicesController {
@@ -15,8 +16,8 @@ export class ServicesController {
 
   @Get('create')
   @Render('services/cadastrar')
-  exibirCadastrar() {
-    
+  exibirCadastrar(@Request() req) {
+    return{message: req.flash('message'), oldData: req.flash('oldData')};
   }
 
   @Get('index')
@@ -27,6 +28,7 @@ export class ServicesController {
   }
 
   @Post()
+  @UseFilters(CreateException)
   @Redirect('/admin/services/index')
  async cadastrar(@Body() createServiceDto: CreateServiceDto) {
    return await this.servicosRepository.save(createServiceDto);
