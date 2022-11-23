@@ -1,0 +1,36 @@
+<div class='content-header'>
+  <div class='container-fluid'>
+    <h1>Lista de Usuários</h1>
+  </div>
+</div>
+<div class='content'>
+  <div class='container-fluid'>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th scope='col'>ID</th>
+          <th scope='col'>Nome</th>
+          <th scope='col'>Email</th>
+          <th scope='col'>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+          <tr>
+            <th>{{this.id}}</th>
+            <td>{{this.nome}}</td>
+            <td>{{this.email}}</td>
+            <td><a href='/admin/users/{{this.id}}/edit' class='btn btn-primary'>Atualizar</a>
+            <form action="/admin/users/{{this.id}}?_method=DELETE" method="post" style="display: inline;">
+            <button href='/admin/users/{{this.id}}' type="submit" onclick="return confirm('Tem ceteza que deseja excluir esse formulário')" class='btn btn-danger'>Excluir</button>
+            </form>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div class='float-left'>
+      <a href='/admin/users/create' class='btn btn-success'>Novo Usuario</a>
+    </div>
+  </div>
+</div>
