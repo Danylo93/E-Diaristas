@@ -1,38 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TreinaWeb: ["Imersão Multi-stack"](https://www.treinaweb.com.br/painel/multi-stack)
 
-## Getting Started
+## Projeto e-diaristas (React + Next.js)
 
-First, run the development server:
+#### Lista de branches
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+|                                                                                     | Branch | Descrição                   |
+| ----------------------------------------------------------------------------------- | ------ | --------------------------- |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/01.zip) | 01     | Criação da Home Page        |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/02.zip) | 02     | Busca de Diaristas pelo CEP |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/03.zip) | 03     | Configurando Ferramentas e Criando Componentes |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/04.zip) | 04     | Criação de Formulários com React Hook Form e Validações com Yup |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/05.zip) | 05     | Criação de telas de contratação de serviços |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/06.zip) | 06     | React Context, APIs e Serviços |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/07.zip) | 07     | Integração com Back-End, Autenticação e Roteamento |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/08.zip) | 08     | Lista de Diárias do Cliente e Detalhes da Diária |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/09.zip) | 09     | Cadastro de diaristas |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/10.zip) | 10     | Lista de Oportunidades e Candidatar-se a Diárias |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/11.zip) | 11     | Confirmação de Diárias |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/12.zip) | 12     | Avaliação de Diárias |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/13.zip) | 13     | Cancelar Diárias |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/14.zip) | 14     | Filtro de Diárias |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/15.zip) | 15     | Lista de Pagamentos de Diaristas |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/16.zip) | 16     | Alteração de dados cadastrais |
+| [Download](https://github.com/treinaweb/multistack-ediaristas-react/archive/17.zip) | 17     | Recuperação de Senha |
