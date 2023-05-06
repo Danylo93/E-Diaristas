@@ -1,6 +1,7 @@
 import { Foto } from "src/api/fotos/entities/foto.entity";
-import { BeforeInsert, Column, CreateDateColumn, Entity, JoinColumn, ManyToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeInsert, Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import * as bcrypt from 'bcrypt'
+import { CidadesAtendidas } from "src/api/cidades-atendidas/entities/cidades-atendida.entity";
 @Entity()
 export class UsuarioApi {
     @PrimaryGeneratedColumn('increment')
@@ -47,13 +48,16 @@ export class UsuarioApi {
     @JoinColumn({name: 'foto_documento'})
     fotoDocumento: Foto;
 
-    // @ManyToMany(()=> CidadesAtendidas,
-    // (cidadesAtendidas) => cidadesAtendidas.usuarios,{
-    //     nullable:true,
-    //     eager:true,
-    // })
-    // @JoinColumn({name: 'cidades_atendidas_usuarios'})
-    // cidadesAtendidas: CidadesAtendidas[];
+    @ManyToMany(
+    ()=> CidadesAtendidas,
+    (cidadesAtendidas) => cidadesAtendidas.usuarios,
+    {
+        nullable:true,
+        eager:true,
+    },
+    )
+    @JoinTable({name: 'cidades_atendidas_usuarios'})
+    cidadesAtendidas: CidadesAtendidas[];
 
     // @OneToOne(() => EnderecoDiarista,{
     //     nullable: true,
