@@ -1,5 +1,10 @@
 import React from 'react';
-import { Button, Container, Typography, CircularProgress } from '@mui/material';
+import {
+    Button,
+    Container,
+    Typography,
+    CircularProgress,
+} from '@material-ui/core';
 import PageTitle from 'ui/components/data-display/PageTitle/PageTitle';
 import SafeEnvironment from 'ui/components/feedback/SafeEnvironment/SafeEnvironment';
 
@@ -12,13 +17,7 @@ import TextFieldMask from 'ui/components/inputs/TextFieldMask/TextFieldMask';
 import UserInformation from 'ui/components/data-display/UserInformation/UserInformation';
 import useVerificarProfissionais from 'data/hooks/pages/useVerificarProfissionais.page';
 
-interface VerificarProfissionaisProps {
-    onContratarProfissional: () => void;
-}
-
-const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
-    props
-) => {
+const VerificarProfissionais: React.FC = () => {
     const {
         cep,
         setCep,
@@ -93,7 +92,6 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
                                 <Button
                                     variant={'contained'}
                                     color={'secondary'}
-                                    onClick={props.onContratarProfissional}
                                     sx={{ mt: 5 }}
                                 >
                                     Contratar um(a) profissional

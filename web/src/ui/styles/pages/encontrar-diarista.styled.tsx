@@ -1,7 +1,7 @@
-import { styled } from '@mui/material/styles';
-// import { } from '@mui/material';
+import { styled } from '@material-ui/core/styles'; 
+// import { } from '@material-ui/core'; 
 
-export const Component = styled('div')`
-    background-color: white;
-    color: black;
+export const Component = styled('div')` 
+    background-color:
+    white; color: black;
 `;

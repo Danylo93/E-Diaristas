@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@material-ui/core/styles';
 import {
     Typography,
     ListItem,
@@ -7,7 +7,7 @@ import {
     LinkProps,
     IconButton,
     Container,
-} from '@mui/material';
+} from '@material-ui/core';
 
 export const FooterContainer = styled('footer')`
     background-color: ${({ theme }) => theme.palette.primary.main};

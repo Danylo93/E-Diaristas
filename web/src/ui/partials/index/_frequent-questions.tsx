@@ -11,7 +11,7 @@ import {
     AccordionDetails,
     Typography,
     Container,
-} from '@mui/material';
+} from '@material-ui/core';
 
 const questionsList = [
     {

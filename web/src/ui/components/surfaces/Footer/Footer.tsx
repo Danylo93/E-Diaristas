@@ -8,7 +8,7 @@ import {
     SocialButton,
     FooterGrid,
 } from './Footer.style';
-import { List, Box, Typography } from '@mui/material';
+import { List, Box, Typography } from '@material-ui/core';
 import Link from 'ui/components/navigation/Link/Link';
 
 const Footer = () => {

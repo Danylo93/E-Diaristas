@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles';
-import { List, ListItemText, Avatar, Divider } from '@mui/material';
+import { styled } from '@material-ui/core/styles';
+import { List, ListItemText, Avatar, Divider } from '@material-ui/core';
 
 export const GradientBackground = styled('section')`
     background: ${({ theme }) =>

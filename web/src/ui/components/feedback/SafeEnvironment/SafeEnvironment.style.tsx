@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@material-ui/core/styles';
 
 export const SafeEnvironmentContainer = styled('div')`
     color: ${({ theme }) => theme.palette.text.secondary};

@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles';
-import { Paper } from '@mui/material';
+import { styled } from '@material-ui/core/styles';
+import { Paper } from '@material-ui/core';
 
 export const FormElementsContainer = styled('div')`
     display: flex;

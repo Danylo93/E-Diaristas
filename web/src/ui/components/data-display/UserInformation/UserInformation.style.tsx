@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles';
-import { Avatar, Rating, Box, Theme } from '@mui/material';
+import { styled } from '@material-ui/core/styles';
+import { Avatar, Rating, Box, Theme } from '@material-ui/core';
 // import { UserInformationProps } from './UserInformation';
 
 export const UserInformationContainer = styled(Box, {

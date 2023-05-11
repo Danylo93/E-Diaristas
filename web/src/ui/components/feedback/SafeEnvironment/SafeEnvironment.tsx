@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container } from '@material-ui/core';
 import { SafeEnvironmentContainer } from './SafeEnvironment.style';
 
 const SafeEnvironment = () => {

@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles';
-import { AppBar, Drawer, AppBarProps } from '@mui/material';
+import { styled } from '@material-ui/core/styles';
+import { AppBar, Drawer, AppBarProps } from '@material-ui/core';
 
 export const HeaderAppBar = styled((props: AppBarProps) => (
     <AppBar position={'sticky'} {...props} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
     Container,
     Toolbar,
@@ -6,7 +6,7 @@ import {
     MenuList,
     MenuItem,
     Divider,
-} from '@mui/material';
+} from '@material-ui/core';
 import useIsMobile from 'data/hooks/useIsMobile';
 import RoundedButton from 'ui/components/inputs/RoudedButton/RoundedButton';
 import Link from 'ui/components/navigation/Link/Link';
@@ -16,37 +16,14 @@ import {
     ButtonsContainer,
     HeaderDrawer,
 } from './Header.style';
-import { UserInterface, UserType } from 'data/@types/UserInterface';
-import UserHeaderMenu from 'ui/components/navigation/UserHeaderMenu/UserHeaderMenu';
-import UserProfileAvatar from 'ui/components/data-display/UserProfileAvatar/UserProfileAvatar';
-import { useEffect } from 'react';
 
-export interface HeaderProps {
-    user: UserInterface;
-    onLogout?: () => void;
-}
-
-const Header: React.FC<HeaderProps> = (props) => {
+const Header = () => {
     const isMobile = useIsMobile();
 
-    return isMobile ? (
-        <HeaderMobile {...props} />
-    ) : (
-        <HeaderDesktop {...props} />
-    );
+    return isMobile ? <HeaderMobile /> : <HeaderDesktop />;
 };
 
-const HeaderDesktop: React.FC<HeaderProps> = (props) => {
-    const [isMenuOpen, setMenuOpen] = useState(false),
-        hasUser = props.user.nome_completo.length > 0,
-        userType = props.user.tipo_usuario;
-
-    useEffect(() => {
-        if (!hasUser) {
-            setMenuOpen(false);
-        }
-    }, [hasUser]);
-
+const HeaderDesktop = () => {
     return (
         <HeaderAppBar>
             <Toolbar component={Container}>
@@ -57,73 +34,28 @@ const HeaderDesktop: React.FC<HeaderProps> = (props) => {
                     />
                 </Link>
 
-                <ButtonsContainer>
-                    {hasUser && (
-                        <>
-                            {userType === UserType.Diarista ? (
-                                <Link
-                                    href={'/oportunidades'}
-                                    Component={RoundedButton}
-                                >
-                                    Oportunidades
-                                </Link>
-                            ) : (
-                                <Link
-                                    href={'/encontrar-diarista'}
-                                    Component={RoundedButton}
-                                >
-                                    Encontrar Diarista
-                                </Link>
-                            )}
-                            <Link href={'/diarias'} Component={RoundedButton}>
-                                Diárias
-                            </Link>
-                            {userType === UserType.Diarista && (
-                                <Link
-                                    href={'/pagamentos'}
-                                    Component={RoundedButton}
-                                >
-                                    Pagamentos
-                                </Link>
-                            )}
-                        </>
-                    )}
-                </ButtonsContainer>
-
+                <div>&nbsp;</div>
                 <div>&nbsp;</div>
 
-                {hasUser ? (
-                    <UserHeaderMenu
-                        user={props.user}
-                        isMenuOpen={isMenuOpen}
-                        onClick={() => setMenuOpen(true)}
-                        onMenuClick={() => setMenuOpen(false)}
-                        onMenuClose={() => setMenuOpen(false)}
-                        onLogout={props.onLogout}
-                    />
-                ) : (
-                    <ButtonsContainer>
-                        <Link
-                            href={'/cadastro/diarista'}
-                            Component={RoundedButton}
-                            mui={{ color: 'primary', variant: 'contained' }}
-                        >
-                            Seja um(a) diarista
-                        </Link>
-                        <Link href={'/login'} Component={RoundedButton}>
-                            Login
-                        </Link>
-                    </ButtonsContainer>
-                )}
+                <ButtonsContainer>
+                    <Link
+                        href={'/cadastro/diarista'}
+                        Component={RoundedButton}
+                        mui={{ color: 'primary', variant: 'contained' }}
+                    >
+                        Seja um(a) diarista
+                    </Link>
+                    <Link href={'/login'} Component={RoundedButton}>
+                        Login
+                    </Link>
+                </ButtonsContainer>
             </Toolbar>
         </HeaderAppBar>
     );
 };
 
-const HeaderMobile: React.FC<HeaderProps> = (props) => {
-    const [isDrawerOpen, setDrawerOpen] = useState(false),
-        hasUser = props.user.nome_completo.length > 0,
-        userType = props.user.tipo_usuario;
+const HeaderMobile = () => {
+    const [isDrawerOpen, setDrawerOpen] = useState(false);
     return (
         <HeaderAppBar>
             <Toolbar component={Container}>
@@ -147,69 +79,17 @@ const HeaderMobile: React.FC<HeaderProps> = (props) => {
                     onClose={() => setDrawerOpen(false)}
                     onClick={() => setDrawerOpen(false)}
                 >
-                    {hasUser ? (
-                        <>
-                            <UserProfileAvatar user={props.user} />
-                            <MenuList>
-                                {userType === UserType.Diarista ? (
-                                    <Link
-                                        href={'/oportunidades'}
-                                        Component={MenuItem}
-                                    >
-                                        Oportunidades
-                                    </Link>
-                                ) : (
-                                    <Link
-                                        href={'/encontrar-diarista'}
-                                        Component={MenuItem}
-                                    >
-                                        Encontrar Diarista
-                                    </Link>
-                                )}
-                                <Link href={'/diarias'} Component={MenuItem}>
-                                    Diárias
-                                </Link>
-                                {userType === UserType.Diarista && (
-                                    <Link
-                                        href={'/pagamentos'}
-                                        Component={MenuItem}
-                                    >
-                                        Pagamentos
-                                    </Link>
-                                )}
+                    <MenuList>
+                        <Link href={'/login'} Component={MenuItem}>
+                            Login
+                        </Link>
 
-                                <Divider />
-                                <Link
-                                    href={'/alterar-dados'}
-                                    Component={MenuItem}
-                                >
-                                    Alterar Dados
-                                </Link>
-                                <Link
-                                    href={''}
-                                    Component={MenuItem}
-                                    onClick={props.onLogout}
-                                >
-                                    Sair
-                                </Link>
-                            </MenuList>
-                        </>
-                    ) : (
-                        <MenuList>
-                            <Link href={'/login'} Component={MenuItem}>
-                                Login
-                            </Link>
+                        <Divider />
 
-                            <Divider />
-
-                            <Link
-                                href={'/cadastro/diarista'}
-                                Component={MenuItem}
-                            >
-                                Seja um(a) diarista
-                            </Link>
-                        </MenuList>
-                    )}
+                        <Link href={'/cadastro/diarista'} Component={MenuItem}>
+                            Seja um(a) diarista
+                        </Link>
+                    </MenuList>
                 </HeaderDrawer>
             </Toolbar>
         </HeaderAppBar>
