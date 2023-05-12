@@ -8,13 +8,13 @@ export class Foto {
 
   @Column({ nullable: false, unique: true })
   @Expose({ name: 'file_name' })
-  fileName: string;
+  fileName?: string;
 
   @Column({ nullable: false })
   @Expose({ name: 'content_lenght' })
   contentLength: number;
 
-  @Column({ nullable: false })
+  @Column({ nullable: true })
   @Expose({ name: 'content_type' })
   contentType: string;
 
