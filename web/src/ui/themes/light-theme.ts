@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core';
+import { createTheme } from '@mui/material';
 
 const theme = createTheme({
     palette: {
@@ -73,6 +73,19 @@ const theme = createTheme({
                 root: {
                     boxShadow: '0px 0px 39px rgba(0, 0, 0, 0.05)',
                 },
+            },
+        },
+        MuiTextField: {
+            defaultProps: {
+                InputLabelProps: {
+                    required: false,
+                },
+                required: true,
+            },
+        },
+        MuiSelect: {
+            defaultProps: {
+                required: true,
             },
         },
     },

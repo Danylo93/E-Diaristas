@@ -14,9 +14,15 @@ import {
 } from '@styles/pages/index.styled';
 import BackgroundImage from '@assets/img/background/cleaning.jpg';
 import { useTheme } from '@emotion/react';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from 'ui/router/Router';
+
+type NavigationProp = StackNavigationProp<RootStackParamList, 'Index'>;
 
 const Index = () => {
     const { colors } = useTheme();
+    const navigation = useNavigation<NavigationProp>();
 
     return (
         <View style={{ flex: 1 }}>
@@ -30,16 +36,31 @@ const Index = () => {
                         </ParagraphStyled>
                     </View>
                     <RegisterButtonsContainer>
-                        <RoundedButtonStyled mode={'contained'} fullWidth>
+                        <RoundedButtonStyled
+                            mode={'contained'}
+                            fullWidth
+                            onPress={() =>
+                                navigation.navigate('EncontrarDiarista')
+                            }
+                        >
                             Encontrar Diarista
                         </RoundedButtonStyled>
-                        <RoundedButtonStyled mode={'contained'} fullWidth>
+                        <RoundedButtonStyled
+                            mode={'contained'}
+                            fullWidth
+                            onPress={() =>
+                                navigation.navigate('CadastroDiarista')
+                            }
+                        >
                             Ser Diarista
                         </RoundedButtonStyled>
                     </RegisterButtonsContainer>
                 </RegisterContainer>
                 <LoginContainer>
-                    <RoundedButtonLogin fullWidth>
+                    <RoundedButtonLogin
+                        onPress={() => navigation.navigate('Login')}
+                        fullWidth
+                    >
                         Já possuo uma conta
                     </RoundedButtonLogin>
                 </LoginContainer>

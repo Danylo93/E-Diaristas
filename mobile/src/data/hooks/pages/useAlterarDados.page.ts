@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { EnderecoInterface } from 'data/@types/EnderecoInterface';
+import { FileFieldFile } from 'data/@types/FileInterface';
 import { CadastroDiaristaFormDataInterface } from 'data/@types/FormInterface';
 import { UserInterface, UserType } from 'data/@types/UserInterface';
 import { UserContext } from 'data/contexts/UserContext';
@@ -18,7 +19,7 @@ export default function useAlterarDados() {
             resolver: getResolver(),
         }),
         [picture, setPicture] = useState(''),
-        [pictureFile, setPictureFile] = useState<File>(),
+        [pictureFile, setPictureFile] = useState<File | FileFieldFile>(),
         [snackMessage, setSnackMessage] = useState('');
 
     useEffect(() => {
@@ -189,6 +190,7 @@ export default function useAlterarDados() {
         formMethods,
         picture,
         onPictureChange,
+        setPictureFile,
         snackMessage,
         setSnackMessage,
         onSubmit,

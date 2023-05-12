@@ -14,15 +14,14 @@ export default function useMinhasDiarias() {
         filteredData = useMemo(() => {
             return filtrarDiarias(diarias, filtro);
         }, [diarias, filtro]),
-        {
-            currentPage,
-            setCurrentPage,
-            totalPages,
-            itemsPerPage,
-        } = usePagination(filteredData, 5),
+        { currentPage, setCurrentPage, totalPages, itemsPerPage } =
+            usePagination(filteredData, 5),
         [diariaCancelar, setDiariaCancelar] = useState({} as DiariaInterface),
         [diariaConfirmar, setDiariaConfirmar] = useState({} as DiariaInterface),
-        [diariaAvaliar, setDiariaAvaliar] = useState({} as DiariaInterface);
+        [diariaAvaliar, setDiariaAvaliar] = useState({} as DiariaInterface),
+        [diariaVisualizar, setDiariaVisualizar] = useState(
+            {} as DiariaInterface
+        );
 
     function filtrarDiarias(diarias: DiariaInterface[], filtro: string) {
         return diarias.filter((item) => {
@@ -129,6 +128,8 @@ export default function useMinhasDiarias() {
         podeConfirmar,
         diariaConfirmar,
         setDiariaConfirmar,
+        diariaVisualizar,
+        setDiariaVisualizar,
         confirmarDiaria,
         diariaAvaliar,
         setDiariaAvaliar,

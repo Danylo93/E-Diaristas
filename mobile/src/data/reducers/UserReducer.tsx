@@ -2,7 +2,11 @@ import React, { useReducer, useEffect } from 'react';
 import { ApiLinksInterface } from 'data/@types/ApiLinksInterface';
 import produce from 'immer';
 import { ApiService, ApiServiceHateoas } from 'data/services/ApiService';
-import { UserInterface, UserType } from 'data/@types/UserInterface';
+import {
+    ForceUserState,
+    UserInterface,
+    UserType,
+} from 'data/@types/UserInterface';
 import {
     CidadeInterface,
     EnderecoInterface,
@@ -32,6 +36,7 @@ export const initialState = {
         numero: '',
     } as EnderecoInterface,
     isLogging: false,
+    forceUserState: ForceUserState.none,
 };
 
 export type InitialStateType = typeof initialState;
@@ -40,7 +45,8 @@ type UserAction =
     | 'SET_USER'
     | 'SET_LOGGING'
     | 'SET_ADDRESS_LIST'
-    | 'SET_USER_ADDRESS';
+    | 'SET_USER_ADDRESS'
+    | 'SET_FORCE_USER_STATE';
 
 export type UserActionType = {
     type: UserAction;
@@ -70,6 +76,9 @@ const reducer = (
                 break;
             case 'SET_LOGGING':
                 draftState.isLogging = action.payload as boolean;
+                break;
+            case 'SET_FORCE_USER_STATE':
+                draftState.forceUserState = action.payload as ForceUserState;
                 break;
         }
     });

@@ -30,7 +30,7 @@ export const LoginService = {
         LocalStorage.clear('token_refresh');
     },
     async getUser(): Promise<UserInterface | undefined> {
-        const token = LocalStorage.get('token', '');
+        const token = await LocalStorage.get('token', '');
         if (token) {
             ApiService.defaults.headers['Authorization'] = 'Bearer ' + token;
             return (await ApiService.get<UserInterface>('/api/me')).data;

@@ -1,6 +1,13 @@
+import { Expose } from 'class-transformer';
+
 export class DiaristaLocalidadeResponse {
-    nomeCompleto: string;
-    reputacao: number;
-    fotoUsuario: string;
-    cidade: string;
+  @Expose({ name: 'nome_completo' })
+  nomeCompleto: string;
+
+  reputacao: number;
+
+  @Expose({ name: 'foto_usuario' })
+  fotoUsuario: string;
+
+  cidade: string;
 }

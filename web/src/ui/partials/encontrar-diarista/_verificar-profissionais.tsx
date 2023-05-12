@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    Button,
-    Container,
-    Typography,
-    CircularProgress,
-} from '@material-ui/core';
+import { Button, Container, Typography, CircularProgress } from '@mui/material';
 import PageTitle from 'ui/components/data-display/PageTitle/PageTitle';
 import SafeEnvironment from 'ui/components/feedback/SafeEnvironment/SafeEnvironment';
 
@@ -17,7 +12,13 @@ import TextFieldMask from 'ui/components/inputs/TextFieldMask/TextFieldMask';
 import UserInformation from 'ui/components/data-display/UserInformation/UserInformation';
 import useVerificarProfissionais from 'data/hooks/pages/useVerificarProfissionais.page';
 
-const VerificarProfissionais: React.FC = () => {
+interface VerificarProfissionaisProps {
+    onContratarProfissional: () => void;
+}
+
+const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
+    props
+) => {
     const {
         cep,
         setCep,
@@ -41,7 +42,7 @@ const VerificarProfissionais: React.FC = () => {
             <Container sx={{ mb: 10 }}>
                 <FormElementsContainer>
                     <TextFieldMask
-                        mask={'99.999-999'}
+                        mask={'99999-999'}
                         label={'Digite seu CEP'}
                         fullWidth
                         value={cep}
@@ -64,7 +65,7 @@ const VerificarProfissionais: React.FC = () => {
                     (diaristas.length > 0 ? (
                         <ProfissionaisPaper>
                             <ProfissionaisContainer>
-                                {diaristas.map((item, index) => (
+                                {/* {diaristas.map((item, index) => (
                                     <UserInformation
                                         key={index}
                                         name={item.nome_completo}
@@ -72,7 +73,7 @@ const VerificarProfissionais: React.FC = () => {
                                         rating={item.reputacao || 0}
                                         description={item.cidade}
                                     />
-                                ))}
+                                ))} */}
                             </ProfissionaisContainer>
                             <Container sx={{ textAlign: 'center' }}>
                                 {diaristasRestantes > 0 && (
@@ -92,6 +93,7 @@ const VerificarProfissionais: React.FC = () => {
                                 <Button
                                     variant={'contained'}
                                     color={'secondary'}
+                                    onClick={props.onContratarProfissional}
                                     sx={{ mt: 5 }}
                                 >
                                     Contratar um(a) profissional

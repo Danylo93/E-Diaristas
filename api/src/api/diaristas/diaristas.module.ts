@@ -11,7 +11,12 @@ import { ViaCepService } from 'src/core/via-cep.service';
 @Module({
   imports: [TypeOrmModule.forFeature([UsuarioApi])],
   controllers: [DiaristasController],
-  providers: [DiaristasService, DiaristaRepository, DiaristaMapper, EnderecoService, ViaCepService]
-
+  providers: [
+    DiaristasService,
+    DiaristaRepository,
+    DiaristaMapper,
+    EnderecoService,
+    ViaCepService,
+  ],
 })
-export class DiaristasModule { }
+export class DiaristasModule {}

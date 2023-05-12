@@ -1,7 +1,7 @@
-import { DataSource, DataSourceOptions } from "typeorm";
-import { TypeOrmConfigService } from "./typeorm-config";
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { TypeOrmConfigService } from './typeorm-config';
 
-const database = new TypeOrmConfigService();
+const dataBase = new TypeOrmConfigService();
 export const dataConfigMigrations = new DataSource(
-    database.createTypeOrmOptions() as DataSourceOptions,
+  dataBase.createTypeOrmOptions() as DataSourceOptions,
 );
