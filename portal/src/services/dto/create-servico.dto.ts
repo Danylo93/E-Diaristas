@@ -28,7 +28,7 @@ export class CreateServiceDto {
   {message: 'Campo VALOR QUARTO com formato inválido'}
   )
   @Matches(RegExp('^((?![-]).)*$'), {message: 'VALOR QUARTO não pode ser negativo'})
-  valorquarto: number;
+  valorQuarto: number;
 
   @IsNumber({}, {message: 'campo  HORAS QUARTO deve ser um número'})
   @Min(0, {message: 'campo HORAS QUARTO deve ser maior ou igual a zero'})

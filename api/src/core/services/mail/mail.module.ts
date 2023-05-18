@@ -13,8 +13,8 @@ import { MailService } from './mail.service';
           secure: false,
           port: 587,
           auth: {
-            user: 'postmaster@sandboxadaa059d0b01464e8e20e8011c34db60.mailgun.org',
-            pass: '0b08ef46b7bd1e941be0700a405e0529-db4df449-d9564044',
+            user: 'postmaster@sandbox589b4d7661234274b3e5000276b5837a.mailgun.org',
+            pass: '81b6054b808c7d6d7696382c3b809d03-48c092ba-f0ee22a5',
           },
           ignoreTLS: true,
         },

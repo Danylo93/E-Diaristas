@@ -14,28 +14,25 @@ import { HateosIndex } from './core/hateoas/hateoas-index';
 import { TypeOrmConfigService } from './database/typeorm-config';
 import { MeModule } from './api/me/me.module';
 import { TokensModule } from './auth/tokens/tokens.module';
+import { DiariasModule } from './api/diarias/diarias.module';
 
 @Module({
   imports: [
     AuthModule,
-    TypeOrmModule.forRootAsync(
-      {
-        useClass: TypeOrmConfigService,
-        imports: undefined
-      }
-    ),
+    TypeOrmModule.forRootAsync({ useClass: TypeOrmConfigService }),
     UsuariosModule,
     CidadesAtendidasModule,
     DiaristasModule,
     EnderecoModule,
     ServicosModule,
     UrlGeneratorModule.forRoot({
-      appUrl: 'http://localhost:8000', 
+      appUrl: 'http://localhost:8000',
     }),
     MeModule,
     TokensModule,
+    DiariasModule,
   ],
   controllers: [AppController, ApiController],
   providers: [AppService, HateosIndex],
 })
-export class AppModule { }
+export class AppModule {}

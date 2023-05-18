@@ -2,16 +2,16 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Utils } from 'src/utils/utils';
 import { Repository } from 'typeorm';
-import { CreateServiceDto } from './dto/create-service.dto';
-import { UpdateServiceDto } from './dto/update-service.dto';
-import { Service } from './entities/servico.entity';
+import { CreateServiceDto } from './dto/create-servico.dto';
+import { UpdateServiceDto } from './dto/update-servico.dto';
+import { Servico } from './entities/servico.entity';
 
 @Injectable()
 export class ServicosService {
   constructor(
     private readonly utils: Utils,
-    @InjectRepository(Service)
-     private readonly servicosRepository: Repository<Service>
+    @InjectRepository(Servico)
+     private readonly servicosRepository: Repository<Servico>
   ){}
   async create(createServiceDto: CreateServiceDto) {
     createServiceDto.valorBanheiro = this.utils.formatDecimal(
@@ -32,8 +32,8 @@ export class ServicosService {
     createServiceDto.valorOutros = this.utils.formatDecimal(
       createServiceDto.valorOutros,
     );
-    createServiceDto.valorquarto = this.utils.formatDecimal(
-      createServiceDto.valorquarto,
+    createServiceDto.valorQuarto = this.utils.formatDecimal(
+      createServiceDto.valorQuarto,
     );
 
     return await this.servicosRepository.save(createServiceDto);
@@ -66,8 +66,8 @@ export class ServicosService {
     updateServiceDto.valorOutros = this.utils.formatDecimal(
       updateServiceDto.valorOutros,
     );
-    updateServiceDto.valorquarto = this.utils.formatDecimal(
-      updateServiceDto.valorquarto,
+    updateServiceDto.valorQuarto = this.utils.formatDecimal(
+      updateServiceDto.valorQuarto,
     );
 
     return await this.servicosRepository.update(id, updateServiceDto);

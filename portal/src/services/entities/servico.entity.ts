@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
-export class Service {
+export class Servico {
   @PrimaryGeneratedColumn('increment')
   id: number
 
@@ -18,7 +18,7 @@ export class Service {
   porcentagem: number
 
   @Column()
-  valorquarto: number
+  valorQuarto: number
 
   @Column()
   horasQuarto: number

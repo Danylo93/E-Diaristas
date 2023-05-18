@@ -7,7 +7,7 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
-      database: 'danylo',
+      database: 'ediaristas',
       username: 'root',
       password: 'admin',
       host: 'localhost',

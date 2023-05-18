@@ -24,7 +24,7 @@ export class Servico {
   porcentagem: number;
 
   @Column()
-  valorquarto: number;
+  valorQuarto: number;
 
   @Column()
   horasQuarto: number;

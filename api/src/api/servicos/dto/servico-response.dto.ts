@@ -15,10 +15,9 @@ export class ServicoResponse {
   porcentagem: number;
 
   @Expose({ name: 'valor_quarto' })
-  valorquarto: string;
+  valorQuarto: string;
 
   @Expose({ name: 'horas_quarto' })
-  
   horasQuarto: number;
 
   @Expose({ name: 'valor_sala' })

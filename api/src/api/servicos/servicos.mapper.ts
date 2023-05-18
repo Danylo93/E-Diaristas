@@ -11,7 +11,7 @@ export class ServicoMapper {
     servicoDTO.valorMinimo = this.converterReal(servico.valorMinimo);
     servicoDTO.quantidadeHoras = servico.quantidadeHoras;
     servicoDTO.porcentagem = servico.porcentagem;
-    servicoDTO.valorquarto = this.converterReal(servico.valorquarto);
+    servicoDTO.valorQuarto = this.converterReal(servico.valorQuarto);
     servicoDTO.horasQuarto = servico.horasQuarto;
     servicoDTO.valorSala = this.converterReal(servico.valorSala);
     servicoDTO.horasSala = servico.horasSala;

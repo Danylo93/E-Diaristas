@@ -12,8 +12,8 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ServicosService } from './servicos.service';
-import { CreateServiceDto } from './dto/create-service.dto';
-import { UpdateServiceDto } from './dto/update-service.dto';
+import { CreateServiceDto } from './dto/create-servico.dto';
+import { UpdateServiceDto } from './dto/update-servico.dto';
 import { CreateException } from 'src/common/filters/create-exceptions.filter';
 import { PatchException } from 'src/common/filters/patch-exceptions.filter';
 import { AuthenticatedGuard } from 'src/common/guards/authenticated.guard';
@@ -26,7 +26,7 @@ export class ServicesController {
   @UseGuards(AuthenticatedGuard)
   @UseFilters(AuthException)
   @Get('create')
-  @Render('servicos/cadastrar')
+  @Render('services/cadastrar')
   exibirCadastrar(@Request() req) {
     return {
       message: req.flash('message'),
@@ -38,7 +38,7 @@ export class ServicesController {
   @UseGuards(AuthenticatedGuard)
   @UseFilters(AuthException)
   @Get('index')
-  @Render('servicos/index')
+  @Render('services/index')
   async listarServicos() {
     return { servicos: await this.servicosService.findAll() };
   }
@@ -47,7 +47,7 @@ export class ServicesController {
   @UseFilters(AuthException)
   @Post()
   @UseFilters(CreateException)
-  @Redirect('/admin/servicos/index')
+  @Redirect('/admin/services/index')
   async cadastrar(@Body() createServiceDto: CreateServiceDto) {
     return await this.servicosService.create(createServiceDto);
   }
@@ -55,7 +55,7 @@ export class ServicesController {
   @UseGuards(AuthenticatedGuard)
   @UseFilters(AuthException)
   @Get(':id/edit')
-  @Render('servicos/editar')
+  @Render('services/editar')
   async atualizarServico(@Param('id') id: number, @Request() req) {
     return {
       message: req.flash('message'),
@@ -68,7 +68,7 @@ export class ServicesController {
   @UseGuards(AuthenticatedGuard)
   @UseFilters(PatchException)
   @Patch(':id/edit')
-  @Redirect('/admin/servicos/index')
+  @Redirect('/admin/services/index')
   async update(
     @Param('id') id: number,
     @Body() updateServiceDto: UpdateServiceDto,
