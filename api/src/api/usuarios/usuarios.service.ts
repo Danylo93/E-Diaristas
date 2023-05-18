@@ -54,7 +54,7 @@ export class UsuariosService {
     const { email } = usuarioCadastrado;
     const payload: JwtPayload = { email };
     usuarioCadastroDto.token = await this.jwtTokens.gerarTokens(payload);
-    /* await this.mailService.enviarEmailDeConfirmacao(usuarioCadastrado); */
+    await this.mailService.enviarEmailDeConfirmacao(usuarioCadastrado); 
     return usuarioCadastroDto;
   }
 

@@ -67,8 +67,8 @@ export class UsuarioRequestDto {
   @Expose({ name: 'foto_documento' })
   fotoDocumento: Foto;
   
-//  @IsOptional()
- // @Expose({ name: 'foto_documento' })
- // fotoUsuario: Foto;
+ //@IsOptional()
+ //@Expose({ name: 'foto_documento' })
+ //fotoUsuario: Foto;
  // endereco: EndereceDiarista;
 }
