@@ -77,7 +77,7 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
             {buscaFeita &&
                 (diaristas.length > 0 ? (
                     <ResponseContainer>
-                        {/* {diaristas.map((item, index) => (
+                        {diaristas.map((item, index) => (
                             <UserInformation
                                 key={index}
                                 name={item?.nome_completo}
@@ -86,7 +86,7 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
                                 description={item?.cidade}
                                 darker={index % 2 === 1}
                             />
-                        ))} */}
+                        ))}
 
                         {diaristasRestantes > 0 && (
                             <TextContainer>
