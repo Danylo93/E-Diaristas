@@ -65,7 +65,7 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
                     (diaristas.length > 0 ? (
                         <ProfissionaisPaper>
                             <ProfissionaisContainer>
-                                {/* {diaristas.map((item, index) => (
+                                {diaristas.map((item, index) => (
                                     <UserInformation
                                         key={index}
                                         name={item.nome_completo}
@@ -73,7 +73,7 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
                                         rating={item.reputacao || 0}
                                         description={item.cidade}
                                     />
-                                ))} */}
+                                ))}
                             </ProfissionaisContainer>
                             <Container sx={{ textAlign: 'center' }}>
                                 {diaristasRestantes > 0 && (
