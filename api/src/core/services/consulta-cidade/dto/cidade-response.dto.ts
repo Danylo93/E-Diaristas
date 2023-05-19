@@ -1,5 +1,5 @@
 export class CidadeResponseDto {
-    ibge: string;
-    cidade: string;
-    estado: string;
-  }
+  ibge: string;
+  cidade: string;
+  estado: string;
+}

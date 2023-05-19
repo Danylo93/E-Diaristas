@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToClass, plainToInstance } from 'class-transformer';
-import { IbgeService } from 'src/core/services/consulta-cidade/consulta-cidade.service';
+import { IbgeService } from 'src/core/services/consulta-cidade/conulta-cidade.service';
 import { Repository } from 'typeorm';
 import { UsuarioApi } from '../usuarios/entities/usuario.entity';
 import { UsuarioRepository } from '../usuarios/usuarios.repository';
