@@ -80,6 +80,8 @@ const Contratacao: React.FC<ContratacaoProps> = ({ onDone }) => {
         );
     }
 
+    console.log('Serviços::::',servicos)
+
     return (
         <ScrollView ref={scrollViewRef}>
             {step < 4 && (

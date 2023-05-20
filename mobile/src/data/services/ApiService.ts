@@ -15,8 +15,8 @@ ApiService.interceptors.response.use(
     (response) => response,
     (error) => {
         if (
-            error.response.status === 401 &&
-            error.response.data.code === 'token_not_valid'
+            error?.response?.status === 401 &&
+            error?.response?.data?.code === 'token_not_valid'
         ) {
             return handleTokenRefresh(error);
         }
