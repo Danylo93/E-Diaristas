@@ -18,7 +18,7 @@ export class ValidatorPagamento {
   }
 
   validarClienteDiaria(usuarioLogado: UsuarioApi, diaria: Diaria) {
-    if (usuarioLogado.id !== diaria.cliente.id) {
+    if (usuarioLogado.id !== diaria?.cliente.id) {
       throw new ForbiddenException('Acesso Negado');
     }
   }
