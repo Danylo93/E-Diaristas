@@ -6,11 +6,20 @@ import { TypeOrmConfigService } from './database/typeorm-config';
 import { ServicosModule } from './services/servicos.module';
 import { UserPlatformModule } from './user-platform/user-platform.module';
 import { AuthModule } from './auth/auth.module';
+import { DiariasModule } from './diarias/diarias.module';
+import { UsuarioApiModule } from './usuario-api/usuario-api.module';
 
 @Module({
-  imports: [TypeOrmModule.forRootAsync({
-    useClass: TypeOrmConfigService,
-  }), ServicosModule, UserPlatformModule, AuthModule],
+  imports: [
+    TypeOrmModule.forRootAsync({
+      useClass: TypeOrmConfigService,
+    }),
+    ServicosModule,
+    UserPlatformModule,
+    AuthModule,
+    DiariasModule,
+    UsuarioApiModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
