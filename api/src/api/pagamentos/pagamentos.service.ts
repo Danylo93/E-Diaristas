@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { GatewayPagamentoService } from 'src/core/services/gataway-pagamento/gataway-pagamento.service';
+import { GatewayPagamentoService } from 'src/core/services/gataway-pagamento/gateway-pagamento.service';
 import { ValidatorPagamento } from 'src/core/validators/pagamento/validator-pagamento';
 import { DiariaRepository } from '../diarias/diarias.repository';
 import DiariaStatus from '../diarias/enum/diaria-status.enum';

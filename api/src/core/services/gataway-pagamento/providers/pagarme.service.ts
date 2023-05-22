@@ -10,11 +10,11 @@ import { Diaria } from 'src/api/diarias/entities/diaria.entity';
 import { Pagamento } from 'src/api/pagamentos/entities/pagamento.entity';
 import { PagamentoStatus } from 'src/api/pagamentos/enum/pagamento-status.enum';
 import { PagamentoRepository } from 'src/api/pagamentos/pagamentos.repository';
-import { GatewayPagamentoService } from '../gataway-pagamento.service';
+import { GatewayPagamentoService } from '../gateway-pagamento.service';
 import { PagarmeReembolsoRequestDto } from './dtos/pagarme-reembolso-request.dto';
 import { PagarmeReembolsoResponseDto } from './dtos/pagarme-reembolso-response.dto';
-import { PagarmeTransacaoResponseDto } from './dtos/pagarme-transacao-request.dto';
-import { PagarmeTransacaoRequestDto } from './dtos/pagarme-transacao-response.dto';
+import { PagarmeTransacaoRequestDto } from './dtos/pagarme-transacao-request.dto';
+import { PagarmeTransacaoResponseDto } from './dtos/pagarme-transacao-response.dto';
 
 @Injectable()
 export class PagarmeService implements GatewayPagamentoService {
@@ -35,12 +35,16 @@ export class PagarmeService implements GatewayPagamentoService {
     try {
       return await this.tryRealizarEstornoTotal(diaria);
     } catch (error) {
+      console.log(error);
       throw new BadRequestException(error.response.data.errors);
     }
   }
 
   realizarEstornoParcial(diaria: Diaria): Promise<Pagamento> {
-    throw new Error('Method not implemented.');
+    const request = new PagarmeReembolsoRequestDto();
+    request.apiKey = this.API_KEY;
+    request.amount = diaria.preco / 2;
+    return this.realizarEstorno(diaria, request);
   }
 
   private tryRealizarEstornoTotal(diaria: Diaria): Promise<Pagamento> {
@@ -111,7 +115,7 @@ export class PagarmeService implements GatewayPagamentoService {
 
   private criarTransacaoRequest(diaria: Diaria, cardHash: string) {
     const transacaoRequest = new PagarmeTransacaoRequestDto();
-    transacaoRequest.amount = diaria.preco * 100;
+    transacaoRequest.amount = diaria.preco;
     transacaoRequest.cardHash = cardHash;
     transacaoRequest.async = false;
     transacaoRequest.apiKey = this.API_KEY;

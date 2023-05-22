@@ -4,7 +4,7 @@ import { DiariaRepository } from 'src/api/diarias/diarias.repository';
 import { Diaria } from 'src/api/diarias/entities/diaria.entity';
 import DiariaStatus from 'src/api/diarias/enum/diaria-status.enum';
 import { DiaristaIndiceService } from '../services/diarista-indice/diarista-indice.service';
-import { GatewayPagamentoService } from '../services/gataway-pagamento/gataway-pagamento.service';
+import { GatewayPagamentoService } from '../services/gataway-pagamento/gateway-pagamento.service';
 
 @Injectable()
 export class ScheduleTask {
@@ -31,7 +31,7 @@ export class ScheduleTask {
     this.logger.debug('Task de seleção de diarias finalizada');
   }
 
-  @Cron(CronExpression.EVERY_10_SECONDS)
+  @Cron(CronExpression.EVERY_10_HOURS)
   async cancelarDariaSemCandidato(): Promise<void> {
     this.logger.debug(
       'Iniciando task de cancelamento de diárias sem candidatos',

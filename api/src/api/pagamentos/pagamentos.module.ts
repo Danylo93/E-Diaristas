@@ -7,7 +7,7 @@ import { Diaria } from '../diarias/entities/diaria.entity';
 import { ValidatorPagamento } from 'src/core/validators/pagamento/validator-pagamento';
 import { Pagamento } from './entities/pagamento.entity';
 import { PagamentoRepository } from './pagamentos.repository';
-import { GatewayPagamentoService } from 'src/core/services/gataway-pagamento/gataway-pagamento.service';
+import { GatewayPagamentoService } from 'src/core/services/gataway-pagamento/gateway-pagamento.service';
 import { PagarmeService } from 'src/core/services/gataway-pagamento/providers/pagarme.service';
 
 @Module({
