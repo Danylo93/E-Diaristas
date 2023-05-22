@@ -76,5 +76,5 @@ export class Servico {
     default: () => 'CURRENT_TIMESTAMP(6)',
     onUpdate: 'CURRENT_TIMESTAMP(6)',
   })
-  updatedAt: Date;
+  updateAt: Date;
 }

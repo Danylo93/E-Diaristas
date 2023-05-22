@@ -34,7 +34,7 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
     EnderecoModule,
     ServicosModule,
     UrlGeneratorModule.forRoot({
-      appUrl: 'http://localhost:8000',
+      appUrl: 'http://localhost:3000',
     }),
     MeModule,
     TokensModule,
