@@ -18,6 +18,8 @@ interface VerificarProfissionaisProps {
     onContratarProfissional: () => void;
 }
 
+
+
 const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
     props
 ) => {
@@ -41,6 +43,8 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
             buscarProfissionais(cepAutomatico);
         }
     }, [cepAutomatico]);
+
+   
 
     return (
         <ScrollView>

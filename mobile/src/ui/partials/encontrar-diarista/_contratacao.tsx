@@ -84,6 +84,7 @@ const Contratacao: React.FC<ContratacaoProps> = ({ onDone }) => {
 
     return (
         <ScrollView ref={scrollViewRef}>
+            <Text> Ola</Text>
             {step < 4 && (
                 <Breadcrumb
                     selected={breadcrumbItems[step - 1]}
@@ -193,8 +194,8 @@ const Contratacao: React.FC<ContratacaoProps> = ({ onDone }) => {
                             </Button>
                         </ConfirmationContainer>
                     </Portal>
-                )}
-            </UserFormContainer>
+                )} 
+              </UserFormContainer> 
         </ScrollView>
     );
 };

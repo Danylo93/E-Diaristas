@@ -221,7 +221,7 @@ const Oportunidades: React.FC = () => {
 
                     <Divider />
 
-                    {oportunidadeSelecionada?.avaliacoes_cliente.length > 0 && (
+                    {oportunidadeSelecionada?.avaliacoes_cliente?.length > 0 && (
                         <>
                             <Typography
                                 sx={{

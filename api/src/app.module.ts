@@ -23,6 +23,8 @@ import { CoreModule } from './core/core.module';
 import { ConfirmacaoPresencaModule } from './api/confirmacao-presenca/confirmacao-presenca.module';
 import { AvaliacaoModule } from './api/avaliacoes/avaliacao.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { HateoasDiaria } from './core/hateoas/hateoas-diaria';
+import { HateoasUsuario } from './core/hateoas/hateoas-usuario';
 
 @Module({
   imports: [

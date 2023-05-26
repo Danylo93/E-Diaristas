@@ -15,7 +15,7 @@ export type TextInputProps = Omit<
 const TextInput: React.FC<TextInputProps> = ({ helperText, autoComplete = '', ...props }) => {
     return (
         <View>
-            <TextInputStyled autoComplete={autoComplete} {...props} />
+            <TextInputStyled  {...props} />
             {/* @ts-ignore */}
             {helperText ? (<HelperTextStyled type="error">{helperText}</HelperTextStyled>) : null}
         </View>
