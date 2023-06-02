@@ -17,7 +17,7 @@ export class ClienteMapper {
     if (!usuario.fotoUsuario) {
       clienteDto.fotoUsuario = null;
     } else {
-      clienteDto.fotoUsuario = usuario.fotoUsuario.url;
+      clienteDto.fotoUsuario = usuario.fotoUsuario?.url;
     }
 
     return clienteDto;

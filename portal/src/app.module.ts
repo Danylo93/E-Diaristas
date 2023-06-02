@@ -8,6 +8,8 @@ import { UserPlatformModule } from './user-platform/user-platform.module';
 import { AuthModule } from './auth/auth.module';
 import { DiariasModule } from './diarias/diarias.module';
 import { UsuarioApiModule } from './usuario-api/usuario-api.module';
+import { MailModule } from './common/mail/mail.module';
+import { PasswordResetModule } from './password-reset/password-reset.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { UsuarioApiModule } from './usuario-api/usuario-api.module';
     AuthModule,
     DiariasModule,
     UsuarioApiModule,
+    MailModule,
+    PasswordResetModule,
   ],
   controllers: [AppController],
   providers: [AppService],

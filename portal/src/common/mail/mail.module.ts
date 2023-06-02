@@ -22,7 +22,7 @@ import { MailService } from './mail.service';
           from: '"No Reply" <noreply@ediaristas.com>',
         },
         template: {
-          dir: join(__dirname, 'templates'),
+          dir: '/Users/Danylo/Documents/E-Diaristas/portal/src/common/mail/templates',
           adapter: new HandlebarsAdapter(),
           options: {
             strict: true,

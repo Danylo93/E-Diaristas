@@ -3,7 +3,7 @@ import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from 'src/auth/decorators/get-user.decorator';
 import { Roles } from 'src/auth/decorators/roles.decorator';
 import { RolesGuard } from 'src/auth/guards/roles.guard';
-import { IbgeService } from 'src/core/services/consulta-cidade/conulta-cidade.service';
+import { IbgeService } from 'src/core/services/consulta-cidade/consulta-cidade.service';
 import { UsuarioApi } from '../usuarios/entities/usuario.entity';
 import TipoUsuario from '../usuarios/enum/tipo-usuario.enum';
 import { EnderecoDiaristaRequestDto } from './dto/endereco-diarista-request.dto';

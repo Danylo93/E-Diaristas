@@ -6,7 +6,7 @@ import { Diaria } from 'src/api/diarias/entities/diaria.entity';
 import { Pagamento } from 'src/api/pagamentos/entities/pagamento.entity';
 import { PagamentoRepository } from 'src/api/pagamentos/pagamentos.repository';
 import { ConsultaCidade } from './services/consulta-cidade/consulta-cidade';
-import { IbgeService } from './services/consulta-cidade/conulta-cidade.service';
+import { IbgeService } from './services/consulta-cidade/consulta-cidade.service';
 import { ConsultaDistanciaCep } from './services/consulta-distancia/consulta-distancia';
 import { GoogleMatrixService } from './services/consulta-distancia/consulta-distancia.service';
 import { DiaristaServiceSelecao } from './services/diarista-indice/diarista-indice';

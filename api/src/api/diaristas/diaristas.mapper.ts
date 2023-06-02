@@ -27,7 +27,7 @@ export class DiaristaMapper {
     if (!usuario.fotoUsuario) {
       diaristaDTO.fotoUsuario = null;
     } else {
-      diaristaDTO.fotoUsuario = usuario.fotoUsuario.url;
+      diaristaDTO.fotoUsuario = usuario.fotoUsuario?.url;
     }
 
     diaristaDTO.tipoUsuario = usuario.tipoUsuario;
