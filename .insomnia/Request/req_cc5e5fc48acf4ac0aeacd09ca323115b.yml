@@ -1,0 +1,77 @@
+_id: req_cc5e5fc48acf4ac0aeacd09ca323115b
+type: Request
+parentId: wrk_3090ca704829492587568dd4b90b60a5
+modified: 1685070596691
+created: 1683927716710
+url: "{{ _['host:'] }}/api/usuarios"
+name: Cadastrar
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - name: nome_completo
+      value: Barry Aller
+      id: pair_daa989ad947942a1bbd8f5a350d1657c
+    - id: pair_62bad992fbde4ac5aa3fb15137cdb724
+      name: email
+      value: danylo.etapa@gmail.com
+      description: ""
+    - id: pair_2fe0c95ef0f141adbca025440d43befa
+      name: password
+      value: Jesus@2023
+      description: ""
+    - id: pair_af0aa9bc8e7e4c6bb525f99a0bf8462f
+      name: password_confirmation
+      value: Jesus@2023
+      description: ""
+    - id: pair_80638186195c462894083e9d99b6ee1b
+      name: tipo_usuario
+      value: "1"
+      description: ""
+    - id: pair_9f83383c70c741668e88ea3a0f2479c5
+      name: cpf
+      value: "36425355544"
+      description: ""
+    - id: pair_47f8cc9bbf6341c5ae20af2eea6a40e7
+      name: reputacao
+      value: "3"
+      description: ""
+    - id: pair_b8bb868efa524e679fc3d622bf549b3f
+      name: nascimento
+      value: 1993-12-12
+      description: ""
+    - id: pair_b2a977bed47b484392c0eb92ae829cd1
+      name: telefone
+      value: "11983633321"
+      description: ""
+      type: text
+      multiline: false
+    - id: pair_6886d4eef9c34b68af18009aed6029f3
+      name: chave_pix
+      value: "1120524522"
+      description: ""
+      type: text
+      fileName: C:\Users\Danylo\Pictures\Screenshots\erro.png
+      disabled: false
+      multiline: false
+    - id: pair_cd20e36f375d41408aced303332c2087
+      name: foto_documento
+      value: "11983626321"
+      description: ""
+      type: file
+      multiline: false
+      fileName: C:\Users\Danylo\Pictures\roboforex.jpg
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+authentication: {}
+metaSortKey: -1683822948813.375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

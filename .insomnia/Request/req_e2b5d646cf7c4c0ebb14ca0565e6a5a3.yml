@@ -1,0 +1,28 @@
+_id: req_e2b5d646cf7c4c0ebb14ca0565e6a5a3
+type: Request
+parentId: fld_a4fea88e0629483bb77c3fbdcb746fa8
+modified: 1685070711393
+created: 1685069278481
+url: "{{ _['host:'] }}/api/recuperar-senha"
+name: Reset de Senha
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email":"patty.2014278@gmail.com"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1685069278481
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

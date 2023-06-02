@@ -1,0 +1,33 @@
+_id: req_3e9bf5c39c6f4ec28c2cd58b7bc4ef83
+type: Request
+parentId: fld_a4fea88e0629483bb77c3fbdcb746fa8
+modified: 1685067672608
+created: 1685067575866
+url: "{{ _['host:'] }}/api/usuarios/foto"
+name: Atualizar Foto
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_2d5f9932cd6547b4acd0fd513e6e143b
+      name: foto_usuario
+      value: ""
+      description: ""
+      type: file
+      fileName: C:\Users\Danylo\Pictures\Screenshots\tempo.png
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHR5LjIwMTQyNzhAZ21haWwuY29tIiwiaWF0IjoxNjg1MDY3NjQ5LCJleHAiOjE2ODUxMTc2NDl9.-yJoVfc5B9K_9t1W4c71wytst22BiRS1ttmyLY0NK4E
+metaSortKey: -1685067575866
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

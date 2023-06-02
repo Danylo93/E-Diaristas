@@ -1,0 +1,26 @@
+_id: req_84f777dd8b3647948f0ca9eb908a0e6b
+type: Request
+parentId: fld_89aa598887ee46afa18f171ac45a8051
+modified: 1683927691280
+created: 1683835820045
+url: "{{ _['host:'] }}/api/enderecos"
+name: Enderecos
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_047a4f9f41ba48f7bd0de31efd182490
+    name: cep
+    value: "08430500"
+    description: ""
+    disabled: false
+headers: []
+authentication: {}
+metaSortKey: -1683745213017.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

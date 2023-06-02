@@ -1,0 +1,23 @@
+_id: req_7037d7ed1b1b4d89a2880c13c9b559ef
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1684797698879
+created: 1684506595578
+url: "{{ _['host:'] }}/api/diarias/6/candidatar"
+name: Candidatar
+description: ""
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHR5LjIwMTQyNzhAZ21haWwuY29tIiwiaWF0IjoxNjg0Nzk3NjI3LCJleHAiOjE2ODQ4NDc2Mjd9.3R4oEMbWfwgOtXva7yVO8QSPtHsnmGeLhW63be-YjaU
+metaSortKey: -1684483084057.8125
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

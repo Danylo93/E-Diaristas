@@ -1,0 +1,39 @@
+_id: req_8087d0a8f8ae4980a34903b2424ea0ce
+type: Request
+parentId: fld_a4fea88e0629483bb77c3fbdcb746fa8
+modified: 1684689112903
+created: 1684462662119
+url: "{{ _['host:'] }}/api/usuarios/cidades-atendidas"
+name: Atualizar Cidades Atendidas
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"cidades": [
+    		{
+    			"cidade": "São Paulo",
+    			"codigo_ibge": "3550308"
+    		},
+    		{
+    			"cidade": "Campinas",
+    			"codigo_ibge": "3509502"
+    		}
+    	]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsby5vbGl2ZWlyYTczQGdtYWlsLmNvbSIsImlhdCI6MTY4NDY4OTA4MSwiZXhwIjoxNjg0NzM5MDgxfQ.Z6cbhkjdkM9xbJM6004hcLr5A6ErrQYEf0NUrCJVDSI
+metaSortKey: -1684453307422.3125
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

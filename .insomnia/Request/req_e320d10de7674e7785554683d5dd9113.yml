@@ -1,0 +1,29 @@
+_id: req_e320d10de7674e7785554683d5dd9113
+type: Request
+parentId: wrk_3090ca704829492587568dd4b90b60a5
+modified: 1685542645417
+created: 1683928249893
+url: "{{ _['host:'] }}/auth/token"
+name: SignIn
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email":"danylo@gmail.com",
+    	"password": "123456789"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1683784080915.4375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

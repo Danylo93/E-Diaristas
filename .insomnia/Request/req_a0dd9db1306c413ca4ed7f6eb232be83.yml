@@ -1,0 +1,31 @@
+_id: req_a0dd9db1306c413ca4ed7f6eb232be83
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1684798641940
+created: 1684689788611
+url: "{{ _['host:'] }}/api/diarias/1/avaliacao"
+name: Avaliação
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"descricao":"Otimo atendimento Danylo",
+    	"nota": 5
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODQ3OTg1MzYsImV4cCI6MTY4NDg0ODUzNn0.Dkhz1Pr47yoKkAfBsrQSyvuSZkIV4LEFE-VeAdRqXA4
+metaSortKey: -1684689788611
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

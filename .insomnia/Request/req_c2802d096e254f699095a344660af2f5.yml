@@ -1,0 +1,30 @@
+_id: req_c2802d096e254f699095a344660af2f5
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1685546726227
+created: 1684458021109
+url: "{{ _['host:'] }}/api/diarias/8/pagar"
+name: Pagar
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"card_hash": "6014871_achzBYktk40sv88L3ItlDAe5k/ph82Nk+k0pu+NGTsmbMhe1og2N0vyDMfWn27UrrC+7Kkz4Dzz7hFxY/QWEKK1NUo0kv0UoUvTFxKkLtotP7pGer2m/+8K/Am0Tm25B5F1dUxhCbCQQjVHVXUfvlNlvIK0XZT8OHhZq05rLGY566DCvc+7Se6OssoknShZM8n5Jhd7Kch9ppl1Xwm8DQjNShrh3BqBYVS5qDlvflq5AtbUF6MtsyrqTQ3tisZHu4vypr+4/3NPvGCYW8A71wPp10mFhnSo8zqK5ktnkIgW2EioRTeR0imJh3NtXYyYbcsmVa0DJJtCrjy8DdSPQiw=="
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODU1NDY2NzUsImV4cCI6MTY4NTU5NjY3NX0.6IMnvJia_gqtevqrFQo1bsVsdosd9m7kwf8i-TAnSCA
+metaSortKey: -1684137220327.3438
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

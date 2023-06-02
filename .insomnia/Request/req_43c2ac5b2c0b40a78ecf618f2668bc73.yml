@@ -1,0 +1,32 @@
+_id: req_43c2ac5b2c0b40a78ecf618f2668bc73
+type: Request
+parentId: fld_a4fea88e0629483bb77c3fbdcb746fa8
+modified: 1685068412219
+created: 1685067984909
+url: "{{ _['host:'] }}/api/usuarios"
+name: Atualizar Perfil
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"password": "123456789",
+    	"new_password": "Jesus@2023",
+    	"password_confirmation": "Jesus@2023"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHR5LjIwMTQyNzhAZ21haWwuY29tIiwiaWF0IjoxNjg1MDY4MjMzLCJleHAiOjE2ODUxMTgyMzN9.bNthyrIAx5y3oQDY__TG_Z1YolMvHTdGrUNh-9nKcc8
+metaSortKey: -1684932319107
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_2066ddfc87e7493b9038de9686b4b45a
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1684798657392
+created: 1684689969439
+url: "{{ _['host:'] }}/api/diarias/1/confirmar-presenca"
+name: Confirmar Presença
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODQ3OTg1MzYsImV4cCI6MTY4NDg0ODUzNn0.Dkhz1Pr47yoKkAfBsrQSyvuSZkIV4LEFE-VeAdRqXA4
+metaSortKey: -1684597684513.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_758faaf57e71483683b8c48f20294593
+type: Request
+parentId: fld_f4bf95a1576744d48f8db6477665aec6
+modified: 1684930265822
+created: 1684797062348
+url: "{{ _['host:'] }}/api/pagamentos"
+name: Lista Pagamentos
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHR5LjIwMTQyNzhAZ21haWwuY29tIiwiaWF0IjoxNjg0OTMwMjUyLCJleHAiOjE2ODQ5ODAyNTJ9.NOEkGNyuBq121wypLqaKMx6u1p3_H3u_wn_ehsc-9PU
+metaSortKey: -1684797062348
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

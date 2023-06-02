@@ -1,0 +1,30 @@
+_id: req_5f1afa761cd64625b3678e62b0f5d81a
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1684798519773
+created: 1684793195486
+url: "{{ _['host:'] }}/api/diarias/1/cancelar"
+name: Cancelar Diaria
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"motivo_cancelamento": "Não estarei mais disponível"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHR5LjIwMTQyNzhAZ21haWwuY29tIiwiaWF0IjoxNjg0Nzk4NDg1LCJleHAiOjE2ODQ4NDg0ODV9.1wEX_wPwm3kYMWQvP5RJ8KC8py_T3AriIf_jN0Qr1CI
+metaSortKey: -1684793195486
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

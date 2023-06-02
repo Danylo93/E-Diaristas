@@ -1,0 +1,48 @@
+_id: req_985b15e31d844a1f9471cc858730a209
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1685546709935
+created: 1684446027195
+url: "{{ _['host:'] }}/api/diarias"
+name: Cadastrar diaria
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"data_atendimento": "2023-06-30T09:30:00",
+    	"tempo_atendimento": 10,
+    	"preco": 112,
+    	"logradouro": "Rua Crispim Goncalves",
+    	"numero": 1000,
+    	"bairro": "Centro",
+    	"complemento": "SJD",
+    	"cidade": "São Paulo",
+    	"estado": "SP",
+    	"cep": "08430500",
+    	"quantidade_quartos": 1,
+    	"quantidade_salas": 1,
+    	"quantidade_cozinhas": 1,
+    	"quantidade_quintais": 1,
+    	"quantidade_banheiros": 1,
+    	"quantidade_outros": 0,
+    	"observacoes":"chave na portaria",
+    	"servico": 1,
+    	"codigo_ibge": "3550308"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODU1NDY2NzUsImV4cCI6MTY4NTU5NjY3NX0.6IMnvJia_gqtevqrFQo1bsVsdosd9m7kwf8i-TAnSCA
+metaSortKey: -1684446027195
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

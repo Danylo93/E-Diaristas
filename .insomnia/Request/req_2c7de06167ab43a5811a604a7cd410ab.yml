@@ -1,0 +1,37 @@
+_id: req_2c7de06167ab43a5811a604a7cd410ab
+type: Request
+parentId: fld_a4fea88e0629483bb77c3fbdcb746fa8
+modified: 1684797686563
+created: 1684461561341
+url: "{{ _['host:'] }}/api/usuarios/endereco"
+name: Cadastrar endereço
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"logradouro": "Rua Crispim Goncalves",
+    	"numero": "88",
+    	"bairro": "Jardim Irene",
+    	"complemento": "casa",
+    	"cep": "08430500",
+    	"estado": "SP",
+    	"cidade": "São Paulo"
+    	
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHR5LjIwMTQyNzhAZ21haWwuY29tIiwiaWF0IjoxNjg0Nzk3NjI3LCJleHAiOjE2ODQ4NDc2Mjd9.3R4oEMbWfwgOtXva7yVO8QSPtHsnmGeLhW63be-YjaU
+metaSortKey: -1684460587699.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_19c820f6db604beea6a24f7cf7cdc7b2
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1684881406211
+created: 1684459167961
+url: "{{ _['host:'] }}/api/diarias"
+name: Listar diarias por usuario logado
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsby5vbGl2ZWlyYTczQGdtYWlsLmNvbSIsImlhdCI6MTY4NDg4MTM4MywiZXhwIjoxNjg0OTMxMzgzfQ.z0xkKzZ3j9mvjoZIgIJAuGMKfPsT_VrZcECT1pTuH2s
+metaSortKey: -1684137220277.3438
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

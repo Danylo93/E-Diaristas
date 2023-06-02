@@ -1,0 +1,21 @@
+_id: req_d2da18bf748f4b6f860cf2e017ebd687
+type: Request
+parentId: fld_a1883e32b8b64d2fbff9c5019fff4f5e
+modified: 1683917330235
+created: 1683913509996
+url: "{{ _['host:'] }}/api/servicos"
+name: Listar Servicos
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1683745212917.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_35cd0ba2a0024a55ac9299ebc615f488
+type: Request
+parentId: fld_a4fea88e0629483bb77c3fbdcb746fa8
+modified: 1685546698334
+created: 1684461925459
+url: "{{ _['host:'] }}/api/usuarios/cidades-atendidas"
+name: Listar Cidades Atendidas
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsb0BnbWFpbC5jb20iLCJpYXQiOjE2ODU1NDY2NzUsImV4cCI6MTY4NTU5NjY3NX0.6IMnvJia_gqtevqrFQo1bsVsdosd9m7kwf8i-TAnSCA
+metaSortKey: -1684460587649.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

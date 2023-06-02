@@ -1,0 +1,23 @@
+_id: req_71063a9fe6ad4fbdaa937ddd6cbdcebd
+type: Request
+parentId: fld_53ed671c4458499d9a3c3bc313a6c286
+modified: 1684881416560
+created: 1684505580416
+url: "{{ _['host:'] }}/api/oportunidades"
+name: Oportunidades
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbnlsby5vbGl2ZWlyYTczQGdtYWlsLmNvbSIsImlhdCI6MTY4NDg4MTM4MywiZXhwIjoxNjg0OTMxMzgzfQ.z0xkKzZ3j9mvjoZIgIJAuGMKfPsT_VrZcECT1pTuH2s
+metaSortKey: -1684505580416
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

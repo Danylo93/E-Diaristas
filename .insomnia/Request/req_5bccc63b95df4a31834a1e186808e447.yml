@@ -1,0 +1,30 @@
+_id: req_5bccc63b95df4a31834a1e186808e447
+type: Request
+parentId: fld_f4bf95a1576744d48f8db6477665aec6
+modified: 1684781035872
+created: 1684779280822
+url: https://api.pagar.me/1/transactions
+name: Testar Pagar.me
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"api_key": "ak_test_nE14ZiG433nQG0D3aR0XhpzCj4iPkR",
+    	"card_hash": "6013487_LfmtbdUHZyZxzy51TZNlZB6tjlAhw95yEJ/7Tx4SUkpNUQZbPQlSOucBdv009S6q/CQr4cPu0vF5awZXW4JscbuOznbo5B/A0DJFZqL2oPGZEAArgM6XDJX+UU0Xn4zjq+WUmEJGPwDsORO+xc/MI5wT7MLm3k9f5Kn0fRMEAHBRkYlyxMQgBtbVAHCeuO/vZICS1MmI8W3BB5d+AR48jKxdx/kWqOkifmOW/Hbp0j7X5YKCUGsJkDhlQqhrlAeOqYwP2Ov69fcCYTqutYORuv/C/6Ei2BHZyP1+6QzCyssd9pd6wxzy3z6BISBk5PSiAxuaEN2B8o+oO9ILQ44x1g==",
+    	"amount": 1000
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1684779280822
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,27 @@
+_id: req_92406dee6e8f43788d892e25b0ebe54d
+type: Request
+parentId: wrk_3090ca704829492587568dd4b90b60a5
+modified: 1685068262732
+created: 1684459709851
+url: "{{ _['host:'] }}/api/me"
+name: Me
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHR5LjIwMTQyNzhAZ21haWwuY29tIiwiaWF0IjoxNjg1MDY3NjQ5LCJleHAiOjE2ODUxMTc2NDl9.-yJoVfc5B9K_9t1W4c71wytst22BiRS1ttmyLY0NK4E
+metaSortKey: -1683784080865.4375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
