@@ -5,6 +5,27 @@ import DiariaStatus from 'src/diarias/diaria-status.enum';
 export class Helpers {
   async helperHbs(exp: Express) {
     const helpers = {
+      token: () => {
+        return exp.locals.expreq.csrfToken();
+      },
+      userMenu: () => {
+        const user = exp.locals.expreq;
+        return user['user']['nome'];
+      },
+      menuSuperior: (classe, view1, view2) => {
+        const url: string = exp.locals.expreq['originalUrl'];
+        if (url === view1 || url === view2) {
+          return classe;
+        }
+        return '';
+      },
+      menuSubItem: (view) => {
+        const url: string = exp.locals.expreq['originalUrl'];
+        if (url === view) {
+          return 'active';
+        }
+        return '';
+      },
       exibirStatus: (status: number) => {
         switch (status) {
           case 1:

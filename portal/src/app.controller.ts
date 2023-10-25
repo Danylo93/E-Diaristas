@@ -5,9 +5,11 @@ import {
   Redirect,
   Render,
   Request,
+  Res,
   UseFilters,
   UseGuards,
 } from '@nestjs/common';
+import { Response } from 'express';
 import { AppService } from './app.service';
 import { AuthException } from './common/filters/auth-exceptions.filter';
 import { LoginGuard } from './common/guards/login.guard';
@@ -31,4 +33,11 @@ export class AppController {
   @Post('admin/login')
   @Redirect('/admin/users/index')
   doLogin() {}
+
+  @UseFilters(AuthException)
+  @Post('admin/logout')
+  logout(@Request() req, @Res() res: Response) {
+    req.session.destroy();
+    res.redirect('/admin/login');
+  }
 }
