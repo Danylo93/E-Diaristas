@@ -93,7 +93,7 @@ export class UsuarioApi {
     default: () => 'CURRENT_TIMESTAMP(6)',
     onUpdate: 'CURRENT_TIMESTAMP(6)',
   })
-  updatedAt: Date;
+  updateAt: Date;
 
   @BeforeInsert()
   async setPassword(senha: string) {

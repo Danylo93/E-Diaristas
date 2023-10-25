@@ -7,7 +7,7 @@ import { DiaristaServiceSelecao } from './diarista-indice';
 @Injectable()
 export class DiaristaIndiceService implements DiaristaServiceSelecao {
   constructor(private consultaDistanciaService: GoogleMatrixService) {}
-  async selecionarMalhorDiarista(diaria: Diaria): Promise<UsuarioApi> {
+  async selecionarMelhorDiarista(diaria: Diaria): Promise<UsuarioApi> {
     this.validatorDiaria(diaria);
     return await this.calcularMelhorCanidato(diaria, diaria.cep);
   }

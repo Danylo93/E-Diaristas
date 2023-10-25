@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { KeyboardAvoidingView, Platform, View } from 'react-native';
 import { Controller, useFormContext } from 'react-hook-form';
 import TextInput from '../../TextInput/TextInput';
 
@@ -10,7 +10,9 @@ export const NewContactForm: React.FC = () => {
     } = useFormContext();
 
     return (
-        <View>
+        <KeyboardAvoidingView
+            behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+        >
             <Controller
                 name={'usuario.email'}
                 defaultValue={''}
@@ -60,6 +62,6 @@ export const NewContactForm: React.FC = () => {
                     />
                 )}
             />
-        </View>
+        </KeyboardAvoidingView>
     );
 };

@@ -11,6 +11,6 @@ async function bootstrap() {
   app.enableCors({ origin: '*', methods: '*' });
   app.useStaticAssets('public');
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
-  await app.listen(8000);
+  await app.listen(process.env.PORT);
 }
 bootstrap();

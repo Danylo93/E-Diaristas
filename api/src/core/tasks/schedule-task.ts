@@ -4,7 +4,7 @@ import { DiariaRepository } from 'src/api/diarias/diarias.repository';
 import { Diaria } from 'src/api/diarias/entities/diaria.entity';
 import DiariaStatus from 'src/api/diarias/enum/diaria-status.enum';
 import { DiaristaIndiceService } from '../services/diarista-indice/diarista-indice.service';
-import { GatewayPagamentoService } from '../services/gataway-pagamento/gateway-pagamento.service';
+import { GatewayPagamentoService } from '../services/gateway-pagamento/gateway-pagamento.service';
 
 @Injectable()
 export class ScheduleTask {
@@ -65,7 +65,7 @@ export class ScheduleTask {
       `Selecionando melhor diarista para a diária de id: ${diaria.id}`,
     );
 
-    const melhorDiarista = await this.indice.selecionarMalhorDiarista(diaria);
+    const melhorDiarista = await this.indice.selecionarMelhorDiarista(diaria);
     diaria.diarista = melhorDiarista;
     diaria.status = DiariaStatus.CONFIRMADO;
     await this.diariaRepository.repository.save(diaria);

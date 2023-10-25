@@ -57,7 +57,7 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
             <FormContainer>
                 <TextInputMask
                     label={'Digite seu CEP'}
-                    mask={'99.999-999'}
+                    mask={'99999-999'}
                     value={cep}
                     onChangeText={setCep}
                     keyboardType={'number-pad'}
@@ -109,7 +109,7 @@ const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = (
                             onPress={props.onContratarProfissional}
                             style={{ marginTop: 32 }}
                         >
-                            Contratar um profissional
+                            Contratar Profissional
                         </Button>
                     </ResponseContainer>
                 ) : (

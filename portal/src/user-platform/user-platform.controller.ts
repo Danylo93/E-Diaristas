@@ -1,4 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Render, Redirect, UseFilters,Request, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Render,
+  Redirect,
+  UseFilters,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
 import { UserPlatformService } from './user-platform.service';
 import { CreateUserPlatformDto } from './dto/create-user-platform.dto';
 import { UpdateUserPlatformDto } from './dto/update-user-platform.dto';
@@ -15,15 +28,15 @@ export class UserPlatformController {
   @UseFilters(AuthException)
   @Get('index')
   @Render('users/index')
-  async listarUsers(){
-    return { users: await this.userPlatformService.findAll()};
+  async listarUsers() {
+    return { users: await this.userPlatformService.findAll() };
   }
 
   @UseGuards(AuthenticatedGuard)
   @UseFilters(AuthException)
   @Get('create')
   @Render('users/signup')
-  async signupUsers(@Request() req){
+  async signupUsers(@Request() req) {
     return {
       message: req.flash('message'),
       oldData: req.flash('oldData'),
@@ -58,7 +71,10 @@ export class UserPlatformController {
   @UseFilters(PatchException)
   @Patch(':id/edit')
   @Redirect('/admin/users/index')
-  async update(@Param('id') id: number, @Body() updateUserPlatformDto: UpdateUserPlatformDto) {
+  async update(
+    @Param('id') id: number,
+    @Body() updateUserPlatformDto: UpdateUserPlatformDto,
+  ) {
     return await this.userPlatformService.update(id, updateUserPlatformDto);
   }
 

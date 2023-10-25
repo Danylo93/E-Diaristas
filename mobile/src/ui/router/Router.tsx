@@ -142,7 +142,11 @@ const PublicRoute = () => {
                 name="EncontrarDiarista"
                 component={EncontrarDiarista}
             />
-            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen
+                name="Login"
+                component={Login}
+                options={{ title: 'My home' }}
+            />
             <Stack.Screen name="CadastroDiarista" component={Diarista} />
         </Stack.Navigator>
     );
@@ -151,7 +155,7 @@ const PublicRoute = () => {
 const Router: React.FC = () => {
     const { userState } = useContext(UserContext),
         { forceUserState } = userState,
-        logado = userState.user.nome_completo.length > 0,
+        logado = userState.user?.nome_completo?.length > 0,
         logando = userState.isLogging;
 
     if (logando && forceUserState === ForceUserState.none) {

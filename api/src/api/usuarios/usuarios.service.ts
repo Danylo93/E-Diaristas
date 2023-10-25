@@ -14,6 +14,8 @@ import { UsuarioApi } from './entities/usuario.entity';
 import * as fs from 'fs/promises';
 import { join } from 'path';
 import { UsuarioAtualizarRequestDto } from './dto/usuario-atualizar-request.dto';
+import * as aws from 'aws-sdk';
+import { config } from 'dotenv';
 
 @Injectable()
 export class UsuariosService {
@@ -28,7 +30,7 @@ export class UsuariosService {
   ) {}
   async cadastrar(
     usuarioRequestDto: UsuarioRequestDto,
-    file: Express.Multer.File,
+    file: Express.MulterS3.File,
     req: Request,
   ) {
     this.validator.validarConfirmacaoDeSenha(
@@ -63,7 +65,7 @@ export class UsuariosService {
   }
 
   async atualizarFotoUsuario(
-    file: Express.Multer.File,
+    file: Express.MulterS3.File,
     usuarioLogado: UsuarioApi,
     req: Request,
   ): Promise<{ mensagem: string }> {
@@ -168,7 +170,7 @@ export class UsuariosService {
     return reputacaoMedia;
   }
 
-  private async apagarFotoDesatualizada(nome: string, id: number) {
+  private async apagarFotoDesatualizadaLocal(nome: string, id: number) {
     try {
       const path = join(__dirname, '..', '..', '..', '/public/images', nome);
       if (!id) return null;
@@ -178,6 +180,34 @@ export class UsuariosService {
       console.log('Current directory:', __dirname);
       console.log(error);
       throw new BadRequestException('Problema ao excluir foto desatualizada');
+    }
+  }
+
+  private async apagarFotoDesatualizada(nome: string, id: number) {
+
+
+    try {
+      const s3 = new aws.S3({
+        region: process.env.REGION,
+        credentials: {
+          accessKeyId: process.env.ACCESS_KEY_ID,
+          secretAccessKey: process.env.SECRET_ACCESS_KEY,
+        },
+      });
+      s3.deleteObject(
+        {
+          Bucket: process.env.BUCKET,
+          Key: nome,
+        },
+        (err) => console.error(err),
+      );
+
+      await this.foto.deletar(id);
+    } catch (error) {
+      throw new BadRequestException({
+        mensagem: 'Problema ao excluir foto desatualizada',
+        error: `${error}`,
+      });
     }
   }
 }
