@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="#">
   <title>E-diaristas | Admin </title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -44,6 +45,7 @@
           </span>
         </a>
         <form id="logout-form" action="/admin/logout" method="POST" style="display: none;">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
         </form>
       </li>
     </ul>

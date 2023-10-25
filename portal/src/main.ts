@@ -11,6 +11,8 @@ import * as passport from 'passport';
 import { Helpers } from './common/utils/helpers';
 import { Request } from 'express';
 import * as express from 'express';
+import * as csrf from 'csurf';
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const exp = express();
@@ -35,7 +37,9 @@ async function bootstrap() {
     exphbs.engine({ extname: 'hbs', defaultLayout: 'main', helpers }),
   );
 
+  app.use(express.urlencoded({ extended: true }));
   app.use(methodOverride('_method'));
+  app.use(cookieParser());
 
   app.use(
     session({
@@ -48,6 +52,7 @@ async function bootstrap() {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  app.use(csrf());
   app.use(flash());
   await app.listen(4000);
 }

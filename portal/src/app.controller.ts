@@ -18,6 +18,12 @@ import { LoginGuard } from './common/guards/login.guard';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  @Get()
+  @Redirect('admin/login')
+  redirect() {
+    // redirect to login
+  }
+
   @Get('admin/login')
   @Render('login')
   getLogin(@Request() req) {
@@ -25,6 +31,7 @@ export class AppController {
       layout: false,
       loginError: req.flash('loginError'),
       class: req.flash('class'),
+      csrfToken: req.csrfToken(),
     };
   }
 
@@ -39,5 +46,21 @@ export class AppController {
   logout(@Request() req, @Res() res: Response) {
     req.session.destroy();
     res.redirect('/admin/login');
+  }
+
+  @Get('admin/404')
+  @Render('404')
+  notFound() {
+    return {
+      layout: false,
+    };
+  }
+
+  @Get('admin/500')
+  @Render('500')
+  errorServer() {
+    return {
+      layout: false,
+    };
   }
 }

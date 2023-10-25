@@ -6,8 +6,9 @@ import { UserPlatform } from './entities/user-platform.entity';
 import { Utils } from 'src/utils/utils';
 
 @Module({
-  imports:[TypeOrmModule.forFeature([UserPlatform])],
+  imports: [TypeOrmModule.forFeature([UserPlatform])],
   controllers: [UserPlatformController],
-  providers: [UserPlatformService, Utils]
+  providers: [UserPlatformService, Utils],
+  exports: [UserPlatformService],
 })
 export class UserPlatformModule {}

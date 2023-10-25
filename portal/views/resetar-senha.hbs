@@ -19,7 +19,7 @@
     <div class='login-box'>
       <div class='login-logo'>
         <a href='/home'>
-          <img src='/img/logo.png' height='50' />
+          <img src='/img/logo.jpg' height='50' />
           <b>Resetar Senha</b>
         </a>
       </div>
@@ -31,6 +31,7 @@
         </div>
         <div class='card-body login-card-body'>
           <form action='/admin/password-reset' method='post'>
+          <input type="hidden" name="_csrf" value="{{csrfToken}}">
             <div class='input-group mb-3'>
               <input
                 type='email'

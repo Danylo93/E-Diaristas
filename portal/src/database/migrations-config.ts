@@ -1,7 +1,11 @@
-import { DataSource, DataSourceOptions } from "typeorm";
-import { TypeOrmConfigService } from "./typeorm-config";
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { TypeOrmConfigService } from './typeorm-config';
+import { config } from 'dotenv';
+import { ConfigService } from '@nestjs/config';
 
-const database = new TypeOrmConfigService();
+config();
+const configService = new ConfigService();
+const database = new TypeOrmConfigService(configService);
 export const dataConfigMigrations = new DataSource(
-    database.createTypeOrmOptions() as DataSourceOptions,
+  database.createTypeOrmOptions() as DataSourceOptions,
 );

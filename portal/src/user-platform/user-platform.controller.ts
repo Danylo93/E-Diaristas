@@ -28,8 +28,11 @@ export class UserPlatformController {
   @UseFilters(AuthException)
   @Get('index')
   @Render('users/index')
-  async listarUsers() {
-    return { users: await this.userPlatformService.findAll() };
+  async listarUsers(@Request() req) {
+    return {
+      users: await this.userPlatformService.findAll(),
+      csrfToken: req.csrfToken(),
+    };
   }
 
   @UseGuards(AuthenticatedGuard)
@@ -41,6 +44,7 @@ export class UserPlatformController {
       message: req.flash('message'),
       oldData: req.flash('oldData'),
       alert: req.flash('alert'),
+      csrfToken: req.csrfToken(),
     };
   }
 
@@ -64,6 +68,7 @@ export class UserPlatformController {
       message: req.flash('message'),
       oldData: req.flash('oldData'),
       alert: req.flash('alert'),
+      csrfToken: req.csrfToken(),
     };
   }
 
